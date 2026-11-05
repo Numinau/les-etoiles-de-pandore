@@ -1,0 +1,523 @@
+/*  1. POLICES GOOGLE FONTS  */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+  --gris: #eaebed;
+  --blanc: #ffffff;
+  --turquoise: #83c5be;
+  --turquoise-fonce: #17bebb;
+  --doree: #E9A126;
+  --bleu-petrole: #174A5B;
+  --vert-nuit: #2f3e35;
+  --vert-vie: #1B8B59;
+  --gris-fonce: #c6d2ed;
+  --ombre: rgba(47, 62, 53, 0.15);
+  --voile-sombre: linear-gradient(rgba(32, 49, 53, 0.68), rgba(47, 62, 53, 0.68));
+}
+
+/* 3. RESET GLOBAL*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', Verdana, Arial, sans-serif;
+  background-color: var(--gris);
+  color: var(--vert-nuit);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.etoile {
+  color: var(--doree);
+}
+
+/* 4. En-tete et bar menu */
+header {
+  background-color: var(--blanc);
+  box-shadow: 0 2px var(--ombre);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--vert-nuit);
+}
+
+.logo span {
+  color: var(--doree);
+}
+
+.logo img {
+  width: 92px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-weight: 600;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.actif {
+  color: var(--doree);
+  border-bottom: 2px solid var(--doree);
+}
+
+/* 5. Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 70px 0;
+  display: flex;
+  align-items: center;
+  color: var(--blanc);
+  background-image:
+    linear-gradient(rgba(32, 49, 53, 0.55), rgba(47, 62, 53, 0.55)),
+    url('../images/hero-chaton.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.hero-contenu {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-choix {
+  margin-top: 47px;
+}
+
+.hero h1 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 3.4rem;
+  margin-bottom: 17px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+
+.hero-choix h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: var(--blanc);
+}
+
+.hero-choix .sous-titre {
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 40px;
+}
+
+.cartes-choix {
+  display: flex;
+  gap: 64px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carte-choix {
+  background-color: rgba(240, 248, 255, 0.32);
+  border-radius: 17px;
+  padding: 40px 32px;
+  width: 320px;
+  box-shadow: var(--ombre);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carte-choix:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 27px var(--ombre);
+}
+
+.carte-choix .icone {
+  font-size: 2.7rem;
+  margin-bottom: 4px;
+}
+
+.carte-choix h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.carte-choix p {
+  margin-bottom: 4px;
+}
+
+/* 6. Boutons */
+.bouton {
+  display: inline-block;
+  background-color: #017CA0;
+  color: var(--blanc);
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bouton:hover {
+  background-color: var(--turquoise);
+  transform: translateY(-2px);
+}
+
+/* 7. SECTIONS GÉNÉRALES (texte + fond alterné)*/
+.section {
+  padding: 60px 0;
+}
+
+.section-alt {
+  background-color: var(--vert-vie);
+}
+
+.section h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section .intro {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: var(--vert-nuit);
+  text-align: center;
+}
+
+/*  8. Cartes*/
+.grille-animaux {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 32px;
+}
+
+/* .carte sert de base commune aux fiches animal (page accueil/adopter) */
+.carte {
+  display: block; /* la carte peut être un <a> (clic -> adopter.html) ou un <div> */
+  background-color: var(--blanc);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px var(--ombre);
+  transition: transform 0.2s ease;
+}
+
+.carte:hover {
+  transform: translateY(-4px);
+}
+
+.carte img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+}
+
+.carte .infos {
+  padding: 20px;
+}
+
+.carte h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+/* utilisé uniquement sur les fiches animaux */
+.carte .detail {
+  font-size: 0.92rem;
+  color: var(--vert-nuit);
+  margin-bottom: 6px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--doree);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 21px;
+  margin-bottom: 10px;
+}
+
+.mini-photos {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 20px 20px;
+}
+
+.mini-photos img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/*  9. LISTES À PUCES PERSONNALISÉES + ENCART (page famille d'accueil)  */
+.liste-engagements li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 16px;
+}
+
+.liste-engagements li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: var(--blanc);
+}
+
+.encart {
+  background-color: var(--blanc);
+  border-left: 4px solid var(--doree);
+  padding: 18px 22px;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+
+/*  10. FORMULAIRE DE CONTACT  */
+.formulaire {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulaire label {
+  margin-bottom: 6px;
+  display: block;
+}
+
+.formulaire :is(input, textarea) {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--bleu-petrole);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.formulaire textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.formulaire button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.bloc-contact-infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.carte-map {
+  flex: 1;
+  min-width: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px var(--ombre);
+}
+
+.carte-map iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+}
+
+.contact-bas {
+  margin-top: 40px;
+}
+
+/* Bloc dons à côté de la carte Maps sur la page Contact */
+.bloc-dons {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.bloc-dons .bouton {
+  margin-top: 14px;
+}
+
+/*  11. Image à coté du form contact*/
+.contact-flex {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 220px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  opacity: 0.92;
+}
+
+/*  12. Footer */
+footer {
+  background-color: #458f88;
+  color: #f0eee9;
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+
+footer .lien-footer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+footer .lien-footer a {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+footer .lien-footer a:hover {
+  color: var(--bleu-petrole);
+  transform: scale(1.1);
+}
+
+footer .copyright {
+  font-size: 0.86rem;
+  color: #242322;
+}
+
+/*  13. MEDIA QUERIES (site principal)  */
+@media (max-width: 700px) {
+  .nav-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 10px 20px;
+  }
+
+  .hero {
+    padding: 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cartes-choix {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carte-choix {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .bloc-contact-infos {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/*  14. 404  */
+.page404-flex {
+  min-height: 100vh;
+  background-image: url('images/404.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
