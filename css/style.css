@@ -2,17 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
 
 :root {
-  --gris: #eaebed;
-  --blanc: #ffffff;
-  --turquoise: #83c5be;
-  --turquoise-fonce: #17bebb;
-  --doree: #E9A126;
-  --bleu-petrole: #174A5B;
-  --vert-nuit: #2f3e35;
-  --vert-vie: #1B8B59;
-  --gris-fonce: #c6d2ed;
-  --ombre: rgba(47, 62, 53, 0.15);
-  --voile-sombre: linear-gradient(rgba(32, 49, 53, 0.68), rgba(47, 62, 53, 0.68));
+  --dore: #E9A117;           /* doré : lien de la page active, "de Pandore", étoiles */
+  --blanc: #ffffff;          /* fond général + lettres sur fond foncé */
+  --gris: #eaebed;           /* gris perle : sections alternées, badges */
+  --grislogo: #666561;       /* gris du logo : lettres sur fond clair */
+  --grisnuit: #838286;       /* gris nuit (traits foncés du logo) : titres, pied de page */
+  --vertyeuxchat: #058874;   /* vert des yeux du chat (photo d'accueil) : logo, menu, boutons */
+  --turquoise-fonce: #17bebb; /* survol (hover) */
+  --ombre: rgba(58, 57, 54, 0.15);
 }
 
 /* 3. RESET GLOBAL*/
@@ -24,8 +21,8 @@
 
 body {
   font-family: 'Montserrat', 'Segoe UI', Verdana, Arial, sans-serif;
-  background-color: var(--gris);
-  color: var(--vert-nuit);
+  background-color: var(--blanc);
+  color: var(--grislogo);
   line-height: 1.6;
 }
 
@@ -55,7 +52,7 @@ ul {
 }
 
 .etoile {
-  color: var(--doree);
+  color: var(--dore);
 }
 
 /* 4. En-tete et bar menu */
@@ -83,17 +80,17 @@ header {
   font-family: 'Dancing Script', cursive;
   font-size: 1.9rem;
   font-weight: 700;
-  color: var(--vert-nuit);
+  color: var(--vertyeuxchat);
 }
 
 .logo span {
-  color: var(--doree);
+  color: var(--dore);
 }
 
 .logo img {
-  width: 92px;
+  width: 72px;
   height: 72px;
-  object-fit: cover;
+  object-fit: contain; /* contain : le logo entier reste visible, sans être rogné */
 }
 
 .nav-links {
@@ -104,15 +101,22 @@ header {
 
 .nav-links a {
   font-weight: 600;
+  color: var(--vertyeuxchat);
   padding: 6px 4px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.nav-links a:hover,
+/* page active = doré */
 .nav-links a.actif {
-  color: var(--doree);
-  border-bottom: 2px solid var(--doree);
+  color: var(--dore);
+  border-bottom: 2px solid var(--dore);
+}
+
+/* survol = turquoise foncé */
+.nav-links a:hover {
+  color: var(--turquoise-fonce);
+  border-bottom: 2px solid var(--turquoise-fonce);
 }
 
 /* 5. Hero */
@@ -208,7 +212,7 @@ header {
 /* 6. Boutons */
 .bouton {
   display: inline-block;
-  background-color: #017CA0;
+  background-color: var(--vertyeuxchat);
   color: var(--blanc);
   padding: 14px 32px;
   border-radius: 30px;
@@ -217,7 +221,7 @@ header {
 }
 
 .bouton:hover {
-  background-color: var(--turquoise);
+  background-color: var(--turquoise-fonce);
   transform: translateY(-2px);
 }
 
@@ -227,10 +231,11 @@ header {
 }
 
 .section-alt {
-  background-color: var(--vert-vie);
+  background-color: var(--gris);
 }
 
 .section h2 {
+  color: var(--grisnuit);
   font-family: 'Dancing Script', cursive;
   font-size: 2.1rem;
   margin-bottom: 20px;
@@ -240,7 +245,7 @@ header {
 .section .intro {
   max-width: 700px;
   margin: 0 auto 40px auto;
-  color: var(--vert-nuit);
+  color: var(--grislogo);
   text-align: center;
 }
 
@@ -271,11 +276,17 @@ header {
   object-fit: cover;
 }
 
+/* recadrer une photo vers le haut (ex. Pilou : on voit sa tête) */
+.carte img.cadrage-haut {
+  object-position: center top;
+}
+
 .carte .infos {
   padding: 20px;
 }
 
 .carte h3 {
+  color: var(--grisnuit);
   font-size: 1.3rem;
   margin-bottom: 8px;
 }
@@ -283,13 +294,14 @@ header {
 /* utilisé uniquement sur les fiches animaux */
 .carte .detail {
   font-size: 0.92rem;
-  color: var(--vert-nuit);
+  color: var(--grislogo);
   margin-bottom: 6px;
 }
 
 .badge {
   display: inline-block;
-  background-color: var(--doree);
+  background-color: var(--gris);
+  color: var(--grislogo);
   font-size: 0.75rem;
   font-weight: bold;
   padding: 4px 10px;
@@ -299,6 +311,7 @@ header {
 
 .mini-photos {
   display: flex;
+  flex-wrap: wrap; /* si beaucoup de photos, elles passent à la ligne au lieu de déborder */
   gap: 8px;
   padding: 0 20px 20px 20px;
 }
@@ -321,12 +334,12 @@ header {
   content: "★";
   position: absolute;
   left: 0;
-  color: var(--blanc);
+  color: var(--dore);
 }
 
 .encart {
   background-color: var(--blanc);
-  border-left: 4px solid var(--doree);
+  border-left: 4px solid var(--dore);
   padding: 18px 22px;
   border-radius: 8px;
   margin: 24px 0;
@@ -349,7 +362,7 @@ header {
 .formulaire :is(input, textarea) {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid var(--bleu-petrole);
+  border: 1px solid var(--grislogo);
   border-radius: 8px;
   font-family: inherit;
   font-size: 1rem;
@@ -430,8 +443,8 @@ header {
 
 /*  12. Footer */
 footer {
-  background-color: #458f88;
-  color: #f0eee9;
+  background-color: var(--grisnuit);
+  color: var(--blanc);
   padding: 40px 0 20px 0;
   text-align: center;
 }
@@ -450,13 +463,13 @@ footer .lien-footer a {
 }
 
 footer .lien-footer a:hover {
-  color: var(--bleu-petrole);
+  color: var(--turquoise-fonce);
   transform: scale(1.1);
 }
 
 footer .copyright {
   font-size: 0.86rem;
-  color: #242322;
+  color: var(--blanc);
 }
 
 /*  13. MEDIA QUERIES (site principal)  */
@@ -513,11 +526,56 @@ footer .copyright {
 /*  14. 404  */
 .page404-flex {
   min-height: 100vh;
-  background-image: url('images/404.png');
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+/*  15. LIGHTBOX : agrandir les photos des chats (page Adopter)  */
+/* sur les fiches "div.carte" (page Adopter), le curseur devient une loupe */
+div.carte img {
+  cursor: zoom-in;
+}
+
+/* le fond noir qui recouvre toute la page : caché par défaut */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;                         /* colle aux 4 bords de l'écran */
+  z-index: 1000;                    /* au-dessus du menu (z-index 100) */
+  background-color: rgba(20, 18, 17, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+/* la classe "ouverte" est ajoutée par le JavaScript */
+.lightbox.ouverte {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.lightbox button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: var(--blanc);
+  font-size: 3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 10px 18px;
+}
+
+.lightbox button:hover {
+  color: var(--turquoise-fonce);
+}
+
+.lightbox-fermer { top: 10px; right: 10px; }
+.lightbox-prec   { left: 10px; }
+.lightbox-suiv   { right: 10px; }

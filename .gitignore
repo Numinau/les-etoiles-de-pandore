@@ -1,0 +1,3 @@
+# Fichiers à ne jamais envoyer sur GitHub
+*.log
+gcm-diagnose.log
