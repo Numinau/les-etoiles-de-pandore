@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600;700&display=swap');
 
 :root {
-  --dore: #E9A117;           /* doré : lien de la page active, "de Pandore", étoiles */
-  --blanc: #ffffff;          /* fond général + lettres sur fond foncé */
-  --gris: #eaebed;           /* gris perle : sections alternées, badges */
-  --grislogo: #666561;       /* gris du logo : lettres sur fond clair */
-  --grisnuit: #838286;       /* gris nuit (traits foncés du logo) : titres, pied de page */
-  --vertyeuxchat: #058874;   /* vert des yeux du chat (photo d'accueil) : logo, menu, boutons */
-  --turquoise-fonce: #17bebb; /* survol (hover) */
-  --ombre: rgba(58, 57, 54, 0.15);
+  /* Palette de la présidente (couleurs des affiches Canva) */
+  --fond: #fdf9ee;           /* crème pâle : fond général */
+  --beige: #f4cfa7;          /* beige pâle : sections alternées, badges */
+  --brique: #d76542;         /* brique : menu actif, "de Pandore", survols, puces */
+  --brique-fonce: #b5502f;   /* brique foncé : boutons (texte blanc lisible) */
+  --dore: #E9A117;           /* doré : le mot "étoile" de la page d'accueil */
+  --anthracite: #3d3a37;     /* gris du logo : texte, titres, pied de page */
+  --blanc: #ffffff;          /* en-tête, fiches, lettres sur fond foncé */
+  --ombre: rgba(61, 58, 55, 0.15);
 }
 
 /* 3. RESET GLOBAL*/
@@ -21,8 +22,8 @@
 
 body {
   font-family: 'Montserrat', 'Segoe UI', Verdana, Arial, sans-serif;
-  background-color: var(--blanc);
-  color: var(--grislogo);
+  background-color: var(--fond);
+  color: var(--anthracite);
   line-height: 1.6;
 }
 
@@ -80,11 +81,11 @@ header {
   font-family: 'Dancing Script', cursive;
   font-size: 1.9rem;
   font-weight: 700;
-  color: var(--vertyeuxchat);
+  color: var(--anthracite);
 }
 
 .logo span {
-  color: var(--dore);
+  color: var(--brique);
 }
 
 .logo img {
@@ -101,7 +102,7 @@ header {
 
 .nav-links a {
   font-weight: 600;
-  color: var(--vertyeuxchat);
+  color: var(--anthracite);
   padding: 6px 4px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
@@ -109,14 +110,14 @@ header {
 
 /* page active = doré */
 .nav-links a.actif {
-  color: var(--dore);
-  border-bottom: 2px solid var(--dore);
+  color: var(--brique);
+  border-bottom: 2px solid var(--brique);
 }
 
 /* survol = turquoise foncé */
 .nav-links a:hover {
-  color: var(--turquoise-fonce);
-  border-bottom: 2px solid var(--turquoise-fonce);
+  color: var(--brique);
+  border-bottom: 2px solid var(--brique);
 }
 
 /* 5. Hero */
@@ -212,7 +213,7 @@ header {
 /* 6. Boutons */
 .bouton {
   display: inline-block;
-  background-color: var(--vertyeuxchat);
+  background-color: var(--brique-fonce);
   color: var(--blanc);
   padding: 14px 32px;
   border-radius: 30px;
@@ -221,7 +222,7 @@ header {
 }
 
 .bouton:hover {
-  background-color: var(--turquoise-fonce);
+  background-color: var(--brique);
   transform: translateY(-2px);
 }
 
@@ -231,11 +232,11 @@ header {
 }
 
 .section-alt {
-  background-color: var(--gris);
+  background-color: var(--beige);
 }
 
 .section h2 {
-  color: var(--grisnuit);
+  color: var(--anthracite);
   font-family: 'Dancing Script', cursive;
   font-size: 2.1rem;
   margin-bottom: 20px;
@@ -245,7 +246,7 @@ header {
 .section .intro {
   max-width: 700px;
   margin: 0 auto 40px auto;
-  color: var(--grislogo);
+  color: var(--anthracite);
   text-align: center;
 }
 
@@ -286,7 +287,7 @@ header {
 }
 
 .carte h3 {
-  color: var(--grisnuit);
+  color: var(--anthracite);
   font-size: 1.3rem;
   margin-bottom: 8px;
 }
@@ -294,14 +295,14 @@ header {
 /* utilisé uniquement sur les fiches animaux */
 .carte .detail {
   font-size: 0.92rem;
-  color: var(--grislogo);
+  color: var(--anthracite);
   margin-bottom: 6px;
 }
 
 .badge {
   display: inline-block;
-  background-color: var(--gris);
-  color: var(--grislogo);
+  background-color: var(--beige);
+  color: var(--anthracite);
   font-size: 0.75rem;
   font-weight: bold;
   padding: 4px 10px;
@@ -334,12 +335,12 @@ header {
   content: "★";
   position: absolute;
   left: 0;
-  color: var(--dore);
+  color: var(--brique);
 }
 
 .encart {
   background-color: var(--blanc);
-  border-left: 4px solid var(--dore);
+  border-left: 4px solid var(--brique);
   padding: 18px 22px;
   border-radius: 8px;
   margin: 24px 0;
@@ -362,7 +363,7 @@ header {
 .formulaire :is(input, textarea) {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid var(--grislogo);
+  border: 1px solid var(--anthracite);
   border-radius: 8px;
   font-family: inherit;
   font-size: 1rem;
@@ -443,8 +444,8 @@ header {
 
 /*  12. Footer */
 footer {
-  background-color: var(--grisnuit);
-  color: var(--blanc);
+  background-color: var(--anthracite);
+  color: var(--fond);
   padding: 40px 0 20px 0;
   text-align: center;
 }
@@ -463,13 +464,13 @@ footer .lien-footer a {
 }
 
 footer .lien-footer a:hover {
-  color: var(--turquoise-fonce);
+  color: var(--beige);
   transform: scale(1.1);
 }
 
 footer .copyright {
   font-size: 0.86rem;
-  color: var(--blanc);
+  color: var(--beige);
 }
 
 /*  13. MEDIA QUERIES (site principal)  */
@@ -573,7 +574,7 @@ div.carte img {
 }
 
 .lightbox button:hover {
-  color: var(--turquoise-fonce);
+  color: var(--beige);
 }
 
 .lightbox-fermer { top: 10px; right: 10px; }
