@@ -10,6 +10,10 @@
   --dore: #E9A117;           /* doré : le mot "étoile" de la page d'accueil */
   --anthracite: #3d3a37;     /* gris du logo : texte, titres, pied de page */
   --blanc: #ffffff;          /* en-tête, fiches, lettres sur fond foncé */
+
+  /* Pied de page : couleurs séparées, à choisir librement */
+  --fond-pied-de-page: #7c846f;    /* fond du pied de page */
+  --texte-pied-de-page: #ffffff;   /* liens et texte du pied de page */
   --ombre: rgba(61, 58, 55, 0.15);
 }
 
@@ -257,6 +261,12 @@ header {
   gap: 32px;
 }
 
+/* page d'accueil : cartes un peu plus étroites pour en mettre 4 par ligne */
+.grille-apercu {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
 /* .carte sert de base commune aux fiches animal (page accueil/adopter) */
 .carte {
   display: block; /* la carte peut être un <a> (clic -> adopter.html) ou un <div> */
@@ -444,8 +454,8 @@ header {
 
 /*  12. Footer */
 footer {
-  background-color: var(--anthracite);
-  color: var(--fond);
+  background-color: var(--fond-pied-de-page);
+  color: var(--texte-pied-de-page);
   padding: 40px 0 20px 0;
   text-align: center;
 }
