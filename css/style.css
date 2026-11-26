@@ -12,7 +12,7 @@
   --blanc: #ffffff;          /* en-tête, fiches, lettres sur fond foncé */
 
   /* Pied de page : couleurs séparées, à choisir librement */
-  --fond-pied-de-page: #292c2c;    /* fond du pied de page */
+  --fond-pied-de-page: #6c8484;    /* fond du pied de page */
   --texte-pied-de-page: #ffffff;   /* liens et texte du pied de page */
   --ombre: rgba(61, 58, 55, 0.15);
 }
@@ -456,7 +456,7 @@ header {
 footer {
   background-color: var(--fond-pied-de-page);
   color: var(--texte-pied-de-page);
-  padding: 24px 0 20px 0;
+  padding: 24px 0 17px 0;
   text-align: center;
 }
 
