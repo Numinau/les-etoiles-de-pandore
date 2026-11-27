@@ -134,7 +134,7 @@ header {
   color: var(--blanc);
   background-image:
     linear-gradient(rgba(32, 49, 53, 0.55), rgba(47, 62, 53, 0.55)),
-    url('../images/hero-chaton.png');
+    url('../images/hero-chaton.jpg');
   background-size: cover;
   background-position: center;
   text-align: center;
