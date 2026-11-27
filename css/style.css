@@ -181,7 +181,7 @@ header {
 
 .cartes-choix {
   display: flex;
-  gap: 64px;
+  gap: 79px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -395,10 +395,16 @@ header {
 .bloc-contact-infos {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 61px;
   justify-content: center;
   margin-bottom: 50px;
   text-align: center;
+}
+
+/* logo de l'association à gauche des infos de contact */
+.logo-contact {
+  width: 90px;      /* taille du logo */
+  margin: 0 auto;   /* le centre dans sa colonne */
 }
 
 .carte-map {
@@ -456,16 +462,27 @@ header {
 footer {
   background-color: var(--fond-pied-de-page);
   color: var(--texte-pied-de-page);
-  padding: 24px 0 17px 0;
+  padding: 11px 0 14px 0;
   text-align: center;
-}
+  position: relative;   /* sert de repère pour placer la frise */
+  }
+
+/* frise de chats et chiens au-dessus du pied de page */
+footer::before {
+  content: "";                    /* obligatoire pour qu'un ::before s'affiche */
+  position: absolute;
+  left: 0;
+  right: 0;                       /* toute la largeur */
+  bottom: calc(100% - 1px);       /* collée au-dessus du pied de page (1px de chevauchement pour éviter une fine ligne) */
+   height: 60px;
+  background: url("../images/frise-pandore.png") repeat-x left bottom / auto 60px;
+  }
 
 footer .lien-footer {
   display: flex;
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
 }
 
 footer .lien-footer a {
@@ -476,11 +493,34 @@ footer .lien-footer a {
 footer .lien-footer a:hover {
   color: var(--beige);
   transform: scale(1.1);
+  align-items: center;   /* aligne icônes et textes sur la même ligne horizontale */
+}
+
+/* icônes des réseaux dans le pied de page */
+footer .lien-footer img {
+  height: 25px;    /* hauteur identique pour toutes les icônes */
+  width: auto;     /* la largeur suit la hauteur : l'image n'est pas déformée */
+  border-radius: 6px;
+  position: relative;   /* permet de décaler l'image par rapport à sa place normale */
+  top: -3px;            /* la remonte de 3 pixels */
+  filter: saturate(0.5);     /* couleurs adoucies de moitié */
+  opacity: 0.9;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+/* au survol : l'icône retrouve sa couleur vive */
+footer .lien-footer a:hover img {
+  filter: none;
+  opacity: 1;
 }
 
 footer .copyright {
   font-size: 0.86rem;
   color: var(--beige);
+}
+
+/* dernière section de chaque page : place pour la frise du pied de page */
+section:last-of-type {
+  padding-bottom: 124px;   /* 60px recouverts par la frise + 40px d'espace visible */
 }
 
 /*  13. MEDIA QUERIES (site principal)  */
